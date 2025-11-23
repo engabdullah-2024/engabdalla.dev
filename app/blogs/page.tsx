@@ -20,7 +20,9 @@ const LINEAR_BEAMS =
 // Derive a simple category from the title
 function getCategory(title: string): string {
   const t = title.toLowerCase();
-if (t.includes("html")) return "HTML & Markup";
+
+  // 🟦 Web basics
+  if (t.includes("html")) return "HTML & Markup";
   if (t.includes("css") || t.includes("tailwind")) return "CSS & UI";
   if (t.includes("javascript")) return "JavaScript";
   if (t.includes("react")) return "React";
@@ -56,6 +58,9 @@ if (t.includes("html")) return "HTML & Markup";
   // 🟧 Fullstack
   if (t.includes("fullstack") || t.includes("full-stack"))
     return "Fullstack Development";
+
+  // 🟡 Default fallback
+  return "Web Development";
 }
 
 export default function BlogsPage() {
@@ -210,7 +215,7 @@ export default function BlogsPage() {
               <Link
                 key={blog.slug}
                 href={`/blogs/${blog.slug}`}
-                className="group block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-3xl"
+                className="group block h-full rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <Card
                   className="

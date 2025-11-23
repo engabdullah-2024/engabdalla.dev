@@ -25,7 +25,7 @@ const nextConfig = {
         hostname: "encrypted-tbn0.gstatic.com",
       },
       {
-        protocol: "http", // allow http thumbnails too
+        protocol: "http",
         hostname: "encrypted-tbn0.gstatic.com",
       },
       {
@@ -46,7 +46,19 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "miro.medium.com", // ✅ Medium images (TypeScript, JS, etc.)
+        hostname: "miro.medium.com",
+      },
+      {
+        protocol: "https",
+        hostname: "wp.logos-download.com",
+      },
+      {
+        protocol: "https",
+        hostname: "developer.android.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.mygreatlearning.com",
       },
     ],
   },

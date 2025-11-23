@@ -20,7 +20,7 @@ const LINEAR_BEAMS =
 // Derive a simple category from the title
 function getCategory(title: string): string {
   const t = title.toLowerCase();
-  if (t.includes("html")) return "HTML & Markup";
+if (t.includes("html")) return "HTML & Markup";
   if (t.includes("css") || t.includes("tailwind")) return "CSS & UI";
   if (t.includes("javascript")) return "JavaScript";
   if (t.includes("react")) return "React";
@@ -31,7 +31,31 @@ function getCategory(title: string): string {
   if (t.includes("mongo") || t.includes("database")) return "Databases";
   if (t.includes("prisma")) return "Prisma";
   if (t.includes("python")) return "Python";
-  return "Web Development";
+
+  // 🟩 Mobile & cross-platform
+  if (t.includes("react-native") || t.includes("react native"))
+    return "Mobile Development";
+  if (t.includes("flutter")) return "Mobile Development";
+  if (t.includes("kotlin") || t.includes("swift"))
+    return "Native Mobile Development";
+
+  // 🟥 Backend & systems
+  if (t === "go" || t.includes("golang")) return "Backend & Systems";
+
+  // 🟪 AI, data & automation
+  if (t.includes("ai") || t.includes("artificial intelligence"))
+    return "AI & Machine Learning";
+  if (t.includes("data science") || t.includes("data-science"))
+    return "Data Science";
+  if (t.includes("devops")) return "DevOps & Cloud";
+  if (t.includes("automation")) return "Automation";
+
+  // 🟨 UI / UX & layout
+  if (t.includes("responsive")) return "Responsive Design";
+
+  // 🟧 Fullstack
+  if (t.includes("fullstack") || t.includes("full-stack"))
+    return "Fullstack Development";
 }
 
 export default function BlogsPage() {

@@ -1,3 +1,4 @@
+// app/projects/[slug]/page.tsx
 "use client";
 
 import Image from "next/image";
@@ -19,23 +20,18 @@ const fadeInUp = (delay = 0): MotionProps => ({
   transition: { duration: 0.5, ease: "easeOut", delay },
 });
 
-// ✅ Rename this to avoid conflict with Next's generated PageProps
-type ProjectDetailPageProps = {
-  params: {
-    slug: string;
-  };
-};
+// ✅ No custom PageProps type, no `any`
+export default function ProjectDetailPage(props: unknown) {
+  const { params } = props as { params: { slug: string } };
+  const { slug } = params;
 
-export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-  const project = (projects as Project[]).find(
-    (p) => p.slug === params.slug,
-  );
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     notFound();
   }
 
-  const { title, description, tech, liveLink, githubLink, image } = project;
+  const { title, description, tech, liveLink, githubLink, image } = project as Project;
 
   return (
     <main className="relative isolate min-h-[100svh] overflow-hidden px-4 py-12 sm:px-6 lg:px-8 lg:py-16">

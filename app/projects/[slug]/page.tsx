@@ -5,7 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { motion, type MotionProps } from "framer-motion";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
-import { projects, type Project } from "../../data/projects"; // ✅ fixed path
+import { projects, type Project } from "../../data/projects";
 
 const GRID_DATA_URL =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M32 0H0v32' fill='none' stroke='%23cbd5e1' stroke-width='1'/%3E%3C/svg%3E\")";
@@ -19,13 +19,14 @@ const fadeInUp = (delay = 0): MotionProps => ({
   transition: { duration: 0.5, ease: "easeOut", delay },
 });
 
-type PageProps = {
+// ✅ Rename this to avoid conflict with Next's generated PageProps
+type ProjectDetailPageProps = {
   params: {
     slug: string;
   };
 };
 
-function ProjectDetailPage({ params }: PageProps) {
+export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   const project = (projects as Project[]).find(
     (p) => p.slug === params.slug,
   );
@@ -102,7 +103,7 @@ function ProjectDetailPage({ params }: PageProps) {
                 href={liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-xs font-medium text-black dark:text-white shadow-sm hover:bg-brand/90 "
+                className="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-xs font-medium text-black dark:text-white shadow-sm hover:bg-brand/90"
               >
                 View Live
                 <ExternalLink className="h-3.5 w-3.5" />
@@ -174,5 +175,3 @@ function ProjectDetailPage({ params }: PageProps) {
     </main>
   );
 }
-
-export default ProjectDetailPage; // ✅ ensure this is the default export

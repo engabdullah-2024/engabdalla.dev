@@ -1,19 +1,21 @@
 // /data/projects.ts
 
 export interface Project {
+  slug: string;              // ✅ Added slug
   title: string;
   description: string;
   tech: string[];
   liveLink?: string;
   githubLink?: string;
-  image: string; // ✅ Add image field
+  image: string;
 }
 
 export const projects: Project[] = [
   {
+    slug: "mogtax-easy-pay", // ✅ added
     title: "MogTax Easy Pay",
     description:
-      "Scalable property management app built with React.js, Express, Tailwind CSS, Shadcn UI,MongoDB, and jwt. Designed for real-world data modeling and authentication flows.",
+      "Scalable property management app built with React.js, Express, Tailwind CSS, Shadcn UI, MongoDB, and JWT. Designed for real-world data modeling and authentication flows.",
     tech: [
       "React.js",
       "Express",
@@ -21,63 +23,71 @@ export const projects: Project[] = [
       "Shadcn UI",
       "Node.js",
       "MongoDB",
-      "JWt",
+      "JWT",
     ],
-    liveLink: "#", // 🔁 Replace with real link
-    githubLink: "https://github.com/engabdullah-2024/real-state-management",
+    liveLink: "#",
+    githubLink: "#",
     image: "/images/mog.png",
   },
+
   {
+    slug: "portfolio", // ✅ added
     title: "Portfolio",
-  description:
-    "A sleek, modern portfolio built with Next.js, TypeScript, and Shadcn UI, showcasing responsive design, clean code, and seamless user experience.",
-  tech: [
-    "Next.js",
-    "TypeScript",
-    "Shadcn UI",
-    "Framer-Motion"
-    ],
-    liveLink: "https://eng-abdalla-portfolio.vercel.app/", // replace with your live portfolio URL
-  githubLink: "https://github.com/engabdullah-2024/portfolio", // replace if needed
-  image: "/images/portfolio.PNG",
+    description:
+      "A sleek, modern portfolio built with Next.js, TypeScript, and Shadcn UI, showcasing responsive design, clean code, and seamless user experience.",
+    tech: ["Next.js", "TypeScript", "Shadcn UI", "Framer-Motion"],
+    liveLink: "https://engabdalla-dev.vercel.app/",
+    githubLink: "https://github.com/engabdullah-2024/engabdalla.dev",
+    image: "/images/portfolio.PNG",
   },
+
   {
+    slug: "ecommerce-platform", // ✅ added
     title: "E-commerce",
     description:
       "Robust full-stack MERN e-commerce platform with user authentication, admin panel, product CRUD operations, and responsive UI.",
     tech: ["MongoDB", "Express", "React", "Node.js"],
-    liveLink: "#",
-    githubLink: "https://github.com/engabdullah-2024/e-commerce",
+    liveLink: "https://iltire-e-commerce.vercel.app/",
+    githubLink: "https://github.com/engabdullah-2024/Iltire-E-commerce",
     image: "/images/eco.PNG",
   },
-{
-  title: "Calculator",
-  description:
-    "A sleek and responsive calculator app built with vanilla JavaScript and styled using Tailwind CSS for a clean user experience.",
-  tech: ["JavaScript", "Tailwind CSS"],
-  liveLink: "https://calculator-app-chi-vert.vercel.app/", // replace with actual live link if available
-  githubLink: "https://github.com/engabdullah-2024/calculator", // update if different
-  image: "/images/cal.PNG",
-},
-{
-  title: "Cimilo Tracker",
-  description:
-    "A sleek and responsive mileage tracker app built with vanilla JavaScript and styled using Tailwind CSS, designed to help users efficiently log and monitor their trips.",
-  tech: ["JavaScript", "Tailwind CSS"],
-  liveLink: "https://calculator-app-chi-vert.vercel.app/", // Update if you have a more relevant URL
-  githubLink: "https://github.com/engabdullah-2024/calculator", // Update if different repo
-  image: "/images/cimilo.PNG",
-},
-{
-  title: "Dugsi Hub",
-  description:
-    "A free platform offering Grade 12 students access to downloadable exam PDFs, quizzes, and educational resources — designed with Next.js, TypeScript, Tailwind CSS, Shadcn UI, and Framer Motion for a seamless user experience.",
-  tech: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "Framer Motion"],
-  liveLink: "https://dugsi-hub-soma.vercel.app/", // Replace with actual live URL
-  githubLink: "https://github.com/engabdullah-2024/dugsi-hub", // Replace with actual repo if different
-  image: "/images/dugsi.PNG", // Replace with relevant image path
-},
 
+  {
+    slug: "calculator-app", // ✅ added
+    title: "Calculator",
+    description:
+      "A sleek and responsive calculator app built with vanilla JavaScript and styled using Tailwind CSS for a clean user experience.",
+    tech: ["JavaScript", "Tailwind CSS"],
+    liveLink: "https://calculator-app-chi-vert.vercel.app/",
+    githubLink: "https://github.com/engabdullah-2024/calculator",
+    image: "/images/cal.PNG",
+  },
 
+  {
+    slug: "cimilo-tracker", // ✅ added
+    title: "Cimilo Tracker",
+    description:
+      "A sleek and responsive mileage tracker app built with vanilla JavaScript and Tailwind CSS, designed to help users efficiently log and monitor their trips.",
+    tech: ["JavaScript", "Tailwind CSS"],
+    liveLink: "https://cimilo-tracker.vercel.app/",
+    githubLink: "https://github.com/engabdullah-2024/Cimilo-Tracker",
+    image: "/images/cimilo.PNG",
+  },
 
+  {
+    slug: "dugsi-hub", // ✅ added
+    title: "Dugsi Hub",
+    description:
+      "A free platform offering Grade 12 students access to downloadable exam PDFs, quizzes, and educational resources — designed with Next.js, TypeScript, Tailwind CSS, Shadcn UI, and Framer Motion.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Framer Motion",
+    ],
+    liveLink: "https://dugsihubcom.vercel.app/",
+    githubLink: "https://github.com/engabdullah-2024/DugsiHub.com",
+    image: "/images/dugsi.PNG",
+  },
 ];

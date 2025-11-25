@@ -1,31 +1,11 @@
 // app/about/page.tsx
 "use client";
 
-import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, type MotionProps } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-
-import {
-  FaReact,
-  FaNodeJs,
-  FaGithub,
-  FaHtml5,
-  FaCss3Alt,
-  FaGitAlt,
-} from "react-icons/fa";
-import {
-  SiTypescript,
-  SiMongodb,
-  SiTailwindcss,
-  SiNextdotjs,
-  SiExpress,
-  SiJavascript,
-} from "react-icons/si";
-
-type Tech = { icon: ReactNode; name: string };
 
 // Reusable motion preset
 const fadeUp = (delay = 0): MotionProps => ({
@@ -35,21 +15,6 @@ const fadeUp = (delay = 0): MotionProps => ({
 });
 
 export default function AboutPage() {
-  const techIcons: Tech[] = [
-    { icon: <FaReact className="text-sky-500" />, name: "React" },
-    { icon: <SiNextdotjs className="text-neutral-900 dark:text-white" />, name: "Next.js" },
-    { icon: <SiTypescript className="text-blue-600" />, name: "TypeScript" },
-    { icon: <SiJavascript className="text-yellow-500" />, name: "JavaScript" },
-    { icon: <SiTailwindcss className="text-cyan-500" />, name: "Tailwind CSS" },
-    { icon: <FaNodeJs className="text-green-600" />, name: "Node.js" },
-    { icon: <SiExpress className="text-neutral-700 dark:text-neutral-300" />, name: "Express.js" },
-    { icon: <SiMongodb className="text-emerald-500" />, name: "MongoDB" },
-    { icon: <FaGithub className="text-neutral-900 dark:text-white" />, name: "GitHub" },
-    { icon: <FaGitAlt className="text-red-500" />, name: "Git" },
-    { icon: <FaHtml5 className="text-orange-600" />, name: "HTML5" },
-    { icon: <FaCss3Alt className="text-blue-600" />, name: "CSS3" },
-  ];
-
   return (
     <main
       className="
@@ -119,11 +84,8 @@ export default function AboutPage() {
                 className="max-w-[60ch] text-sm sm:text-[0.95rem] md:text-[1rem] leading-relaxed text-muted-foreground"
               >
                 I&apos;m <strong>Eng Abdalla</strong>, a product-minded full-stack engineer who
-                enjoys shipping clean, reliable experiences using{" "}
-                <strong>Next.js</strong>, <strong>TypeScript</strong>,{" "}
-                <strong>Tailwind CSS</strong>, <strong>Node.js</strong>,{" "}
-                <strong>Express</strong>, and <strong>MongoDB</strong>. I care about
-                performance, DX, and UI that feels calm but powerful.
+                enjoys shipping clean, reliable experiences using modern web technologies.
+                I care about performance, DX, and UI that feels calm but powerful.
               </motion.p>
 
               {/* Mini stats row */}
@@ -194,56 +156,6 @@ export default function AboutPage() {
               </div>
             </motion.div>
           </div>
-        </section>
-
-        {/* === TECH STACK GRID === */}
-        <section className="mx-auto max-w-6xl">
-          <motion.div
-            {...fadeUp(0.05)}
-            className="mb-5 flex flex-col items-center gap-2 text-center sm:mb-6"
-          >
-            <h2 className="text-lg sm:text-xl font-semibold text-foreground">
-              Tech I use every day
-            </h2>
-            <p className="max-w-xl text-xs sm:text-sm text-muted-foreground">
-              A lean, modern stack centered around TypeScript and React — optimised for building
-              production-ready apps, not just tutorials.
-            </p>
-          </motion.div>
-
-          <motion.div
-            {...fadeUp(0.1)}
-            className="
-              grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6
-              gap-3 sm:gap-4 md:gap-5
-            "
-          >
-            {techIcons.map((tech, i) => (
-              <motion.div
-                key={tech.name}
-                initial={{ opacity: 0, scale: 0.96 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.3, delay: i * 0.02 }}
-                className="
-                  flex flex-col items-center justify-center
-                  rounded-xl border border-border/70 bg-background/80
-                  p-3 sm:p-4 text-center shadow-sm
-                  backdrop-blur
-                  transition-colors
-                  hover:border-brand/60
-                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60
-                "
-                tabIndex={0}
-                aria-label={tech.name}
-              >
-                <div className="text-3xl sm:text-[2.2rem]">{tech.icon}</div>
-                <span className="mt-1.5 text-[0.75rem] sm:text-xs text-muted-foreground">
-                  {tech.name}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
         </section>
       </div>
     </main>
